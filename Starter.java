@@ -1,31 +1,28 @@
-import java.util.Scanner;
 public class Starter {
-	public static void main(String args[])
+	public static void main(String[] args)
+		
 	{
-		/*int x;
-		Scanner s=new Scanner(System.in);
-		CalculateDifference cal=new CalculateDifference(); 
-		System.out.println("Enter the natural number for which you want to know the difference");
-		x=s.nextInt();
-		System.out.println("Difference of sum and square of sum of "+x+" is "+cal.calculateDifferenc(x));
-	*/
-		int x[];
-		int n;
-		Scanner s=new Scanner(System.in);
-		System.out.println("Enter size of array");
-		n=s.nextInt();
-		x=new int[n];
-		for(int i=0;i<n;i++)
+		int i=0;
+		Details d=new Details();
+		System.out.println("Enter 1 for create player\n Enter 2 for update detail \n Enter 3 for remove player \n Enter 4 for fetch details \n Enter 5 for exit");
+		while(i>0&&i<6)
 		{
-			System.out.println("Enter the number");
-			x[i]=s.nextInt();
+			if(i==1)
+			{
+				d.create();
+			}
+			if(i==2)
+			{
+				d.update();
+			}
+			if(i==3)
+			{
+				d.deleting();
+			}
+			if(i==4)
+			{
+				d.fetch();
+			}
 		}
-	Sorted x1=new Sorted();
-	x=x1.getsorted(x,n);
-	for(int i=0;i<n;i++)
-	{
-		System.out.println(x[i]);
 	}
-	}
-
 }
