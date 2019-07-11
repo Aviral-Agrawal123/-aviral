@@ -1,21 +1,25 @@
-package Project;
+package com.cap.dao;
 
-import java.util.HashMap;
+import com.cap.bean.Bank;
+import com.cap.exception.*;
 
-import Project.BankBean;
 
-public class BankDao {
+import java.util.List;
+
+public interface BankDao {
 	
-	BankBean beankBeanObj;
 	
-	HashMap<Long, BankBean> hm = new HashMap<Long, BankBean>();
+	public Bank AddCustomer(Bank bk) throws BankException;
+	public List<Bank> GetCustomer() throws BankException;
 	
-	public void addCustomer(BankBean beankBeanObj) {			// METHOD TO ADD A CUSTOMER 
-		this.beankBeanObj = beankBeanObj;						// BY SAVING THE BANK BEAN OBJECT
-		hm.put(beankBeanObj.getAccNo(), beankBeanObj);			// IN HASH MAP
-	}
+	public Bank Deposit(double amount,Bank bk) throws BankException;
+	public Bank Withdraw(double amount,Bank bk) throws BankException;
 	
-	public HashMap<Long, BankBean> hm(){						// METHOD TO RETURN HASH MAP OBJECT
-		return hm;
-	}
+	public Bank getCustomer(int acc_no) throws BankException;
+	public double showBalance(Bank bk)throws BankException;
+	
+	public boolean transFund(double amount,Bank frm,Bank to) throws BankException;
+	public List<String> printTransactions(Bank bk)throws BankException;
+	
+	
 }
